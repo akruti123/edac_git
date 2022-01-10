@@ -1,0 +1,27 @@
+package utils;
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.util.HashMap;
+
+import com.app.students.Student;
+
+public interface DeserializationUtils {
+
+	public static HashMap<String,Student> populateDataFromBinFile()
+	{
+		HashMap<String,Student> hm=new HashMap<>();
+		try(ObjectInputStream obj=new ObjectInputStream(new FileInputStream("students.ser")))
+		{
+			hm=(HashMap<String, Student>) obj.readObject();
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return hm;
+		
+	}
+
+}
