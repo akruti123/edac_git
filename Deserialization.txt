@@ -14,7 +14,6 @@ public interface DeserializationUtils {
 		try(ObjectInputStream obj=new ObjectInputStream(new FileInputStream("students.ser")))
 		{
 			hm=(HashMap<String, Student>) obj.readObject();
-			
 		}
 		catch(Exception e)
 		{
