@@ -2,5 +2,6 @@
 ls -l
 pwd
 ls-l
+ls
 
 
